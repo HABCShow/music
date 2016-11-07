@@ -31,6 +31,8 @@
 }
 
 -(void)playSystemSoundWithFileName:(NSString *)fileName{
+    //音效: 在iOS中定义音效为不超过30s的音乐 特点:使用频繁  优点:该音乐会转化为系统声音,播放时没有延迟
+    //CoreFoundation类库是Foundation类库的底层实现,而且两个类库的类型可以通过桥接进行转换
 //    从缓存取出
     SystemSoundID systemSound = [[self.soundIDCache valueForKey:fileName] unsignedIntValue];
     if (systemSound == 0) {
