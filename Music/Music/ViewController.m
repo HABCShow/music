@@ -14,6 +14,9 @@
 
 // 音频缓存
 @property(nonatomic, strong)NSMutableDictionary *soundIDCache;
+// 音乐播放器
+@property(nonatomic, strong)AVAudioPlayer *audioPlayer;
+
 
 @end
 
@@ -29,12 +32,17 @@
 
 
 - (IBAction)playMusic:(id)sender {
+    [self.audioPlayer play];
 }
 
 - (IBAction)pauseMuic:(id)sender {
+    [self.audioPlayer pause];
 }
 
 - (IBAction)stopMusic:(id)sender {
+//    该方法也是音乐暂停，但是会继续缓冲
+//    [self.audioPlayer stop];
+    self.audioPlayer = nil;
 }
 
 - (IBAction)soundID:(id)sender {
@@ -64,9 +72,6 @@
     
 }
     
-    
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -78,6 +83,19 @@
     self.soundIDCache = nil;
 
 
+}
+
+#pragma mark - 懒加载播放器
+-(AVAudioPlayer *)audioPlayer{
+    if (_audioPlayer == nil) {
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"我爱你你却爱着她.mp3" ofType:nil];
+        _audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL fileURLWithPath:filePath] error:nil];
+//        装备播放
+        [_audioPlayer prepareToPlay];
+        
+    }
+    return _audioPlayer;
+    
 }
 
 #pragma mark - 懒加载缓存

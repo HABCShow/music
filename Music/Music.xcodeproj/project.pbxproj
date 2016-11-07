@@ -33,6 +33,7 @@
 		6443E5AE1DD0695E000195D9 /* m_17.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6443E59A1DD0695E000195D9 /* m_17.wav */; };
 		6443E5AF1DD0695E000195D9 /* normal.aac in Resources */ = {isa = PBXBuildFile; fileRef = 6443E59B1DD0695E000195D9 /* normal.aac */; };
 		6443E5B01DD0695E000195D9 /* win.aac in Resources */ = {isa = PBXBuildFile; fileRef = 6443E59C1DD0695E000195D9 /* win.aac */; };
+		6443E5B21DD07434000195D9 /* 我爱你你却爱着她.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6443E5B11DD07434000195D9 /* 我爱你你却爱着她.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		6443E59A1DD0695E000195D9 /* m_17.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = m_17.wav; sourceTree = "<group>"; };
 		6443E59B1DD0695E000195D9 /* normal.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = normal.aac; sourceTree = "<group>"; };
 		6443E59C1DD0695E000195D9 /* win.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = win.aac; sourceTree = "<group>"; };
+		6443E5B11DD07434000195D9 /* 我爱你你却爱着她.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "我爱你你却爱着她.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		6443E5711DD06915000195D9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6443E5B11DD07434000195D9 /* 我爱你你却爱着她.mp3 */,
 				6443E5881DD0695E000195D9 /* 音效 */,
 				6443E5721DD06915000195D9 /* main.m */,
 			);
@@ -223,6 +226,7 @@
 				6443E59E1DD0695E000195D9 /* buyao.wav in Resources */,
 				6443E5A41DD0695E000195D9 /* m_07.wav in Resources */,
 				6443E5A21DD0695E000195D9 /* m_05.wav in Resources */,
+				6443E5B21DD07434000195D9 /* 我爱你你却爱着她.mp3 in Resources */,
 				6443E5AD1DD0695E000195D9 /* m_16.wav in Resources */,
 				6443E57E1DD06915000195D9 /* Assets.xcassets in Resources */,
 				6443E5AB1DD0695E000195D9 /* m_14.wav in Resources */,
