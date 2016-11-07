@@ -12,7 +12,8 @@
 
 @interface ViewController ()
 
-
+// 音频缓存
+@property(nonatomic, strong)NSMutableDictionary *soundIDCache;
 
 @end
 
@@ -24,18 +25,30 @@
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self playSystemSoundWithFileName:@"buyao.caf"];
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"buyao.caf" ofType:nil];
+    
+}
+
+-(void)playSystemSoundWithFileName:(NSString *)fileName{
+//    从缓存取出
+    SystemSoundID systemSound = [[self.soundIDCache valueForKey:fileName] unsignedIntValue];
+    if (systemSound == 0) {
+        
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
     NSURL *url = [NSURL fileURLWithPath:filePath];
     
     SystemSoundID systemSound;
     AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)(url), &systemSound);
+//        缓存
+    [self.soundIDCache setValue:@(systemSound) forKey:fileName];
+        
+    }
+    
     // 播放
     AudioServicesPlaySystemSound(systemSound);
     
 }
-
-    
     
     
 
@@ -43,8 +56,26 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // 优化内存紧张
+    for (NSNumber *soundId in self.soundIDCache.allValues) {
+        // 销毁系统声音
+        AudioServicesDisposeSystemSoundID([soundId unsignedIntValue]);
+    }
+    self.soundIDCache = nil;
+
+
 }
+
+#pragma mark - 懒加载缓存
+-(NSMutableDictionary *)soundIDCache{
+    
+    if (_soundIDCache == nil) {
+        _soundIDCache = [[NSMutableDictionary alloc]init];
+    }
+    return _soundIDCache;
+    
+}
+
 
 
 @end
