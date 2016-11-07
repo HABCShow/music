@@ -24,11 +24,23 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self playSystemSoundWithFileName:@"buyao.caf"];
-    
-    
+
+
+
+
+- (IBAction)playMusic:(id)sender {
 }
+
+- (IBAction)pauseMuic:(id)sender {
+}
+
+- (IBAction)stopMusic:(id)sender {
+}
+
+- (IBAction)soundID:(id)sender {
+    [self playSystemSoundWithFileName:@"buyao.caf"];
+}
+
 
 -(void)playSystemSoundWithFileName:(NSString *)fileName{
     //音效: 在iOS中定义音效为不超过30s的音乐 特点:使用频繁  优点:该音乐会转化为系统声音,播放时没有延迟

@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,7 +17,43 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQ0-xg-9ad">
+                                <state key="normal" title="停止音乐"/>
+                                <connections>
+                                    <action selector="stopMusic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lyT-Dd-3XR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qS2-Jk-ufD">
+                                <state key="normal" title="暂停音乐"/>
+                                <connections>
+                                    <action selector="pauseMuic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ETG-4P-eEw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tA8-eM-Beg">
+                                <state key="normal" title="播放音乐"/>
+                                <connections>
+                                    <action selector="playMusic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W3L-4x-4Pl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVa-is-rRR">
+                                <state key="normal" title="播放音效"/>
+                                <connections>
+                                    <action selector="soundID:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8kJ-8Y-xyp"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bVa-is-rRR" firstAttribute="centerX" secondItem="rQ0-xg-9ad" secondAttribute="centerX" id="3gC-8R-wZW"/>
+                            <constraint firstItem="qS2-Jk-ufD" firstAttribute="top" secondItem="tA8-eM-Beg" secondAttribute="bottom" constant="20" id="5ET-6F-CFM"/>
+                            <constraint firstItem="rQ0-xg-9ad" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Eg-ZX-Sy1"/>
+                            <constraint firstItem="tA8-eM-Beg" firstAttribute="centerX" secondItem="qS2-Jk-ufD" secondAttribute="centerX" id="67e-PU-qTM"/>
+                            <constraint firstItem="qS2-Jk-ufD" firstAttribute="centerX" secondItem="rQ0-xg-9ad" secondAttribute="centerX" id="FIf-AG-Tpk"/>
+                            <constraint firstItem="rQ0-xg-9ad" firstAttribute="top" secondItem="qS2-Jk-ufD" secondAttribute="bottom" constant="20" id="TcL-uR-cAh"/>
+                            <constraint firstItem="rQ0-xg-9ad" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kWR-eK-xGm"/>
+                            <constraint firstItem="bVa-is-rRR" firstAttribute="top" secondItem="rQ0-xg-9ad" secondAttribute="bottom" constant="20" id="qqL-3x-wRs"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
